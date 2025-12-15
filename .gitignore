@@ -1,0 +1,13 @@
+# --- Editor / IDE ---
+.vscode/
+*.code-workspace
+
+# --- OS-specific files ---
+.DS_Store
+Thumbs.db
+
+
+# --- Misc ---
+*.tmp
+*.swp
+*.swo
