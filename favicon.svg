@@ -1,0 +1,11 @@
+<svg id="master-svg" width="128" height="128" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <!-- TV Body: 角丸の四角形 (ネイビー) -->
+                <rect x="6" y="14" width="52" height="40" rx="10" ry="10" fill="none" stroke="#2d2552" stroke-width="6"/>
+                
+                <!-- Play Button: 角丸三角形 (ピンク) -->
+                <path d="M26 24 L44 34 L26 44 Z" fill="#ef5a98" stroke="#ef5a98" stroke-width="4" stroke-linejoin="round"/>
+                
+                <!-- Antenna: 太めのライン (ネイビー) -->
+                <line x1="22" y1="14" x2="16" y2="6" stroke="#2d2552" stroke-width="5" stroke-linecap="round"/>
+                <line x1="42" y1="14" x2="48" y2="6" stroke="#2d2552" stroke-width="5" stroke-linecap="round"/>
+              </svg>

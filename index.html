@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荻野 悠太 | 映像制作・YouTubeディレクション</title>
+    <meta name="description" content="映像制作、YouTubeチャンネル運営ディレクションを行う荻野悠太のポートフォリオサイトです">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Tailwind Config & Custom Styles -->
+    <script src="js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+
+
+<body class="antialiased font-sans selection:bg-secondary selection:text-white">
+
+    <!-- アニメーションロゴ（ローディング画面） -->
+    <div id="logo-loader" class="logo-loader">
+        <!-- グラデーション定義用SVG（表示はされない） -->
+        <svg width="0" height="0">
+            <defs>
+              <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ff8fbe" />
+                <stop offset="100%" stop-color="#ef5a98" />
+              </linearGradient>
+            </defs>
+          </svg>
+      
+          <div class="stage" id="logoStage">
+            
+            <!-- Icon Section -->
+            <div class="icon-container">
+              <svg class="tv-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <!-- TV Body (Fill layer) -->
+                <rect class="tv-fill" x="12" y="18" width="56" height="40" rx="8" ry="8" />
+                
+                <!-- TV Outline (Stroke layer) -->
+                <rect class="tv-stroke" x="12" y="18" width="56" height="40" rx="8" ry="8" />
+                <line class="tv-stroke" x1="32" y1="18" x2="24" y2="10" />
+                <line class="tv-stroke" x1="48" y1="18" x2="56" y2="10" />
+                
+                <!-- Play Button (Strokeで丸み付け) -->
+                <path class="play-icon" d="M36 30 L50 38 L36 46 Z" />
+              </svg>
+            </div>
+      
+            <!-- Text Section -->
+            <div class="text-wrapper">
+              <div class="flex">
+                <span class="char-mask"><span class="char char-y">Y</span></span>
+                <span class="char-mask"><span class="char char-u">U</span></span>
+              </div>
+              
+              <div class="flex flex-col justify-end">
+                <span class="char-mask">
+                  <span class="char word word-studio">STUDIO</span>
+                </span>
+              </div>
+            </div>
+      
+          </div>
+
+          <!-- ローディングインジケーター（アニメーション終了後に表示） -->
+          <div id="loading-indicator" class="loading-indicator">
+            <div class="loading-content">
+              <!-- フィルムストリップ風プログレスバー -->
+              <div class="film-progress-container">
+                <div class="film-progress-bar">
+                  <div class="film-progress-fill" id="progress-fill"></div>
+                  <div class="film-perforations"></div>
+                </div>
+              </div>
+              
+              <!-- ローディングテキスト -->
+              <div class="loading-text">Loading...</div>
+            </div>
+          </div>
+    </div>
+
+    <!-- Fixed Background Blobs (Visible across Hero & Profile) -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <!-- Dynamic Background Blobs (Aurora Effect) -->
+        <div class="absolute top-0 -left-4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- <a href="#" class="font-bold text-2xl tracking-tight text-primary">
+                        Yuta<span class="text-secondary">.Ogino</span>
+                    </a> -->
+                    <a href="#hero" class="logo-link">
+                        <div class="icon-wrapper">
+                          <svg class="tv-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <line class="tv-antenna" x1="32" y1="18" x2="24" y2="10" />
+                            <line class="tv-antenna" x1="48" y1="18" x2="56" y2="10" />
+                            <rect class="tv-body" x="12" y="18" width="56" height="40" rx="8" ry="8" />
+                            <path class="play-icon" d="M36 30 L50 38 L36 46 Z" />
+                          </svg>
+                        </div>
+                        
+                        <div class="logo-text">
+                          <span class="text-yu">Y<span class="char-u">U</span></span>
+                          <span class="text-studio">STUDIO</span>
+                        </div>
+                      </a>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#profile" class="text-slate-600 hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">Profile</a>
+                    <a href="#concept" class="text-slate-600 hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">Service</a>
+                    <a href="#services" class="text-slate-600 hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+                    <a href="#works" class="text-slate-600 hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">Works</a>
+                    <a href="#contact" class="bg-primary text-white hover:bg-opacity-90 px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md transform hover:-translate-y-0.5">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none relative w-8 h-8">
+                        <svg id="menu-icon-bars" class="menu-icon absolute inset-0 w-6 h-6 m-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <svg id="menu-icon-times" class="menu-icon absolute inset-0 w-6 h-6 m-auto opacity-0 rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Nav Panel -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#profile" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50">Profile</a>
+                <a href="#concept" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50">Service</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50">Pricing</a>
+                <a href="#works" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50">Works</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-secondary font-bold hover:bg-slate-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 w-full relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="order-1 lg:order-1 reveal active">
+                    <div class="cinematic-text">
+                        <p class="text-secondary font-bold tracking-wider uppercase mb-2 md:mb-4 text-[clamp(0.75rem,4vw,1.1rem)]">
+                            編集・撮影・運営・コンサルまで幅広く対応
+                        </p>
+             
+                    <h1 class="text-4xl lg:text-6xl font-black text-primary leading-tight mb-4 tracking-tight">
+                        荻野 悠太<br>
+                        <span class="text-2xl lg:text-3xl font-normal text-slate-500">Ogino Yuta</span>
+                    </h1>
+                    <p class="text-base md:text-xl text-slate-600 mb-8 font-medium">
+                        <!-- 編集・撮影・運営・コンサルまで幅広く対応 -->
+                    </p>
+                    </div>
+            
+                    <!-- Stats -->
+                    <div class="flex flex-wrap gap-6 mb-8 border-l-4 border-secondary pl-6">
+                    <div class="flex flex-col items-center">
+                        <p class="text-sm text-slate-500">編集歴</p>
+                        <p class="text-xl md:text-2xl font-bold text-primary">5年</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-sm text-slate-500">チーム管理</p>
+                        <p class="text-xl md:text-2xl font-bold text-primary">5名</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-sm text-slate-500">現在管理数</p>
+                        <p class="text-xl md:text-2xl font-bold text-primary">4ch</p>
+                    </div>
+                    </div>
+            
+                    <!-- CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                    <a
+                        href="#works"
+                        class="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-secondary hover:bg-pink-700 transition-all transform hover:-translate-y-1"
+                    >
+                        実績を見る <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a
+                        href="#contact"
+                        class="inline-flex justify-center items-center px-8 py-3 border-2 border-primary text-base font-medium rounded-full text-primary bg-transparent hover:bg-primary hover:text-white transition-all"
+                    >
+                        問い合わせ
+                    </a>
+                    </div>
+                </div>
+            
+                <!-- Latest Work (Embed) -->
+                <div class="order-2 lg:order-2 reveal delay-200 w-full max-w-lg mx-auto lg:max-w-full">
+                    <div class="latest-work-container">
+                    <!-- Premium Badge -->
+                    <div class="latest-work-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Latest Work</span>
+                    </div>
+                    
+                    <!-- Video Wrapper with Glass Effect -->
+                    <div class="glass-card p-4 md:p-5 rounded-2xl">
+                        <div class="latest-work-video-wrapper">
+                        <div class="video-container">
+                            <iframe
+                            src="https://www.youtube.com/embed/9EoL-zqQNG8?si=P4F5UX_pgSGBnRFz"
+                            title="Latest YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            ></iframe>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Element -->
+                    <div class="latest-work-decoration"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center md:mb-8 mb-4 reveal">
+                    <h2 class="text-3xl font-bold text-primary section-title">Profile</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Text (Premium Glassmorphism Applied) -->
+                    <div class="lg:col-span-7 reveal">
+                        <div class="glass-card p-4 md:p-8 rounded-2xl h-full flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-4">
+                                <h3 class="font-bold text-slate-800">
+                                    <span class="text-xl md:text-2xl text-primary">荻野 悠太</span>
+                                    <!-- <p class="text-sm md:text-xl text-secondary leading-relaxed">ソーシャルメディアディレクター / 映像制作者</p> -->
+                                    <p class="role-title text-sm md:text-xl text-secondary leading-relaxed">
+                                        ソーシャルメディアディレクター<span class="role-separator"> / </span><br class="role-break">
+                                        映像制作者
+                                    </p>
+                                </h3>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                映像制作歴 <span id="videoYears"></span>年、YouTubeチャンネル運営ディレクション歴 <span id="ytYears"></span>年。<br>
+                                「事業成長の一環としての映像制作」を信条とし、単に動画を作るだけでなく、ビジネスの成果に繋がる戦略的な運用を得意としています。
+                            </p>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                現在は5名のプロフェッショナルな編集者で構成されたチームをマネジメントし、様々なYouTubeチャンネルの運営や映像制作に携わっています。組織的な制作体制を構築することで、高品質かつ安定したコンテンツ供給を実現。<br>
+                                チャンネルの立ち上げから成長戦略、日々の運営アドバイスまで、クライアントの課題に寄り添い総合的にサポートを行います。
+                            </p>
+                            <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6 text-sm text-slate-500 border-t border-slate-200/50 pt-4 mt-auto">
+                                <span class="flex items-center">
+                                    <i class="fas fa-language mr-2 text-primary"></i> 対応言語：日本語 / 英語
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="fas fa-graduation-cap mr-2 text-primary"></i> 専攻：異文化コミュニケーション
+                                </span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Skills (Premium Glassmorphism Applied) -->
+                    <div class="lg:col-span-5 reveal delay-100">
+                        <div class="glass-card p-6 md:p-8 rounded-2xl h-full">
+                            <h4 class="text-lg font-bold text-primary mb-6 border-b border-slate-200/50 pb-2">スキル・ツール</h4>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium text-slate-700"><i class="fas fa-video w-6 text-secondary"></i> DaVinci Resolve</span>
+                                    <span class="text-xs bg-white/50 text-slate-500 px-2 py-1 rounded">映像制作</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium text-slate-700"><i class="fas fa-film w-6 text-secondary"></i> Premiere Pro</span>
+                                    <span class="text-xs bg-white/50 text-slate-500 px-2 py-1 rounded">動画編集</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium text-slate-700"><i class="fas fa-image w-6 text-secondary"></i> Photoshop</span>
+                                    <span class="text-xs bg-white/50 text-slate-500 px-2 py-1 rounded">画像編集</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium text-slate-700"><i class="fas fa-chart-line w-6 text-secondary"></i> YouTube Analytics</span>
+                                    <span class="text-xs bg-white/50 text-slate-500 px-2 py-1 rounded">専門分析</span>
+                                </div>
+                                <div class="flex justify-between items-center mt-6 pt-4 border-t border-dashed border-slate-300/50">
+                                    <span class="font-bold text-primary"><i class="fas fa-users w-6 text-secondary"></i> チームマネジメント</span>
+                                    <span class="text-sm font-bold text-secondary">5名統率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catchy Section (Concept) - Solid background starts here to hide blobs -->
+        <section id="concept" class="py-24 relative overflow-hidden z-10">
+
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50 to-slate-50 -z-10" style="background: linear-gradient(to bottom, rgba(248,250,252,0) 0%, rgba(248,250,252,1) 200px, rgba(248,250,252,1) 100%);"></div>
+
+            <!-- Background Shape -->
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-100 to-white skew-y-3 transform -z-20 origin-top-left scale-110"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-2xl md:text-4xl font-bold text-primary mb-6">
+                        中小企業にこそ、<br class="md:hidden">YouTubeという「資産」を。
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        中小企業の課題は「技術は良いのに、知ってもらえない。信用されない」こと。<br>
+                        テレビCMのような莫大な広告費は不要です。<br>
+                        <span class="font-bold text-secondary bg-pink-50 px-1">YouTubeで「顔」と「想い」を見せるだけ</span>で、その壁は突破できます。
+                    </p>
+
+                </div>
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h3 class="text-center text-xl font-bold text-slate-700 mb-12">YouTube運用がもたらす<span class="text-secondary">3つの好循環</span></h3>
+                </div>
+
+                <!-- Triangle Diagram Section -->
+                <div class="max-w-[500px] mx-auto mb-10 md:mb-24 relative reveal delay-100" style="aspect-ratio: 200/180;">
+                    
+                    <!-- Triangle SVG Background -->
+                    <!-- 
+                         Equilateral Triangle Coordinates (ViewBox 0 0 200 180):
+                         Top Vertex: (100, 20)
+                         Bottom Right Vertex: (165, 132.5)
+                         Bottom Left Vertex: (35, 132.5)
+                    -->
+                    <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 200 180">
+                        <path class="triangle-path" d="M100 20 L165 132.5 L35 132.5 Z" fill="none" stroke="#db2777" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    
+                    <!-- Center Label: Positioned Lower (50% from top) for better balance with animation -->
+                    <div class="center-label z-0" style="top: 50%;">
+                        <div class="bg-white/95 backdrop-blur border border-pink-100 shadow-xl px-6 md:px-8 py-2 md:py-4 rounded-xl text-center">
+                            <!-- <span class="text-xs text-secondary font-bold block mb-1 tracking-widest">STRATEGY</span> -->
+                            <span class="font-bold text-primary text-sm md:text-lg whitespace-nowrap">YouTube営業システム</span>
+                        </div>
+                    </div>
+
+                    <!-- Top Node: STOCK (100, 20) -->
+                    <div class="node-item node-1" style="left: 50%; top: 11.11%;">
+                        <div class="node-icon-wrapper">
+                            <i class="fas fa-piggy-bank text-2xl"></i>
+                        </div>
+                        <div class="node-text-wrapper">
+                            <h4 class="font-semibold text-primary leading-none text-sm md:text-base mb-1">資産化</h4>
+                            <!-- <span class="text-xs text-slate-500 font-medium">資産化</span> -->
+                        </div>
+                    </div>
+
+                    <!-- Bottom Right Node: MATCHING (165, 132.5) -->
+                    <div class="node-item node-2" style="left: 82.5%; top: 73.61%;">
+                        <div class="node-icon-wrapper">
+                            <i class="fas fa-magnet text-2xl"></i>
+                        </div>
+                        <div class="node-text-wrapper">
+                            <h4 class="font-semibold text-primary leading-none text-sm md:text-base mb-1">ミスマッチ防止</h4>
+                            <!-- <span class="text-xs text-slate-500 font-medium">ミスマッチ防止</span> -->
+                        </div>
+                    </div>
+
+                    <!-- Bottom Left Node: TRUST (35, 132.5) -->
+                    <div class="node-item node-3" style="left: 17.5%; top: 73.61%;">
+                        <div class="node-icon-wrapper">
+                            <i class="fas fa-handshake text-2xl"></i>
+                        </div>
+                        <div class="node-text-wrapper">
+                            <h4 class="font-semibold text-primary leading-none text-sm md:text-base mb-1">信頼獲得</h4>
+                            <!-- <span class="text-xs text-slate-500 font-medium">信頼獲得</span> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal delay-200">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary hover:transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 mb-6">
+                                <div class="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center text-3xl text-secondary flex-shrink-0">
+                                    <i class="fas fa-piggy-bank"></i>
+                                </div>
+                                <div class="flex flex-col items-start md:items-center text-left md:text-center">
+                                    <h4 class="text-xl font-bold text-primary mb-1">STOCK</h4>
+                                    <p class="text-sm text-slate-500">資産化</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Web広告は支払いを止めれば集客もゼロになりますが、YouTubeは一度投稿すれば半永久的に残ります。<br>
+                                過去の動画が24時間365日働き続ける、
+                                <strong>「予算切れで止まらない営業システム」</strong>
+                                を構築できます。
+                            </p>
+                        </div>
+                        
+
+                        <!-- Card 2 -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary hover:transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 mb-6">
+                                <div class="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center text-3xl text-secondary flex-shrink-0">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="flex flex-col items-start md:items-center text-left md:text-center">
+                                    <h4 class="text-xl font-bold text-primary mb-1">TRUST</h4>
+                                    <p class="text-sm text-slate-500">信頼獲得</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                顔が見えるから、信用される。<br>
+                                「どんな社長か」「どんな現場か」を包み隠さず見せる透明性が、大手にはない親近感と、
+                                <strong>「この人たちなら安心」</strong>
+                                という強固な信用を生みます。
+                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary hover:transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 mb-6">
+                                <div class="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center text-3xl text-secondary flex-shrink-0">
+                                    <i class="fas fa-magnet"></i>
+                                </div>
+                                <div class="flex flex-col items-start md:items-center text-left md:text-center">
+                                    <h4 class="text-xl font-bold text-primary mb-1">MATCHING</h4>
+                                    <p class="text-sm text-slate-500">ミスマッチ防止</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                動画で理念に共感した「ファン」だけが問い合わせてくるため、価格競争に巻き込まれません。<br>
+                                商談コストが減り、<strong>成約率が劇的に向上</strong>します。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow Section -->
+        <section id="flow" class="py-10 md:py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-2 md:px-6">
+                <div class="text-center mb-8 md:mb-16 reveal">
+                    <h2 class="text-3xl font-bold text-primary section-title">Flow</h2>
+                    <p class="mt-4 text-slate-600">高品質を生み出す制作フロー</p>
+                </div>
+
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+                    
+                    <!-- Step 1 -->
+                    <div class="relative flex items-center reveal">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-secondary bg-white text-secondary shadow shrink-0 z-10 font-bold">1</div>
+                        <div class="ml-2 md:ml-6 flex-1 glass-panel p-4 md:p-6 rounded-xl shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-lightbulb text-secondary mr-3 text-xl"></i>
+                                <h3 class="font-bold text-primary text-lg">企画と構成</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm">「検索される」「見続けられる」企画を立案します。</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative flex items-center reveal">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-secondary bg-white text-secondary shadow shrink-0 z-10 font-bold">2</div>
+                        <div class="ml-2 md:ml-6 flex-1 glass-panel p-4 md:p-6 rounded-xl shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-photo-video text-secondary mr-3 text-xl"></i>
+                                <h3 class="font-bold text-primary text-lg">撮影と編集</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm">5名のチーム体制で、テロップ、BGM、効果音など、視聴者を飽きさせない高品質な編集を行います。</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative flex items-center reveal">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-secondary bg-white text-secondary shadow shrink-0 z-10 font-bold">3</div>
+                        <div class="ml-2 md:ml-6 flex-1 glass-panel p-4 md:p-6 rounded-xl shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i class="fab fa-youtube text-secondary mr-3 text-xl"></i>
+                                <h3 class="font-bold text-primary text-lg">投稿</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm">クリックしたくなる「サムネイル画像」作成や、検索にヒットさせる「タイトル・概要欄」の最適化を行います。</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative flex items-center reveal">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-secondary bg-white text-secondary shadow shrink-0 z-10 font-bold">4</div>
+                        <div class="ml-2 md:ml-6 flex-1 glass-panel p-4 md:p-6 rounded-xl shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-chart-bar text-secondary mr-3 text-xl"></i>
+                                <h3 class="font-bold text-primary text-lg">分析・改善</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm">「なぜ伸びたか/伸びなかったか」をデータで分析し、次回の動画で確実に数字を上げる改善を行います。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="services" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8 md:mb-16 reveal">
+                    <h2 class="text-3xl font-bold text-primary section-title">Pricing</h2>
+                    <p class="mt-6 text-xl text-slate-700 text-center">
+                        チャンネル運営費
+                        <span class="block md:inline text-secondary font-black text-2xl md:text-3xl mx-2">
+                            今ならたった1万円！
+                        </span>
+                    </p>
+                    
+                </div>
+
+                <!-- Main Pricing Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 reveal delay-100">
+                    <div class="glass-panel p-6 md:p-8 rounded-2xl shadow-sm border-l-4 border-secondary">
+                        <h3 class="text-xl font-bold text-primary mb-4">月額運営費</h3>
+                        <p class="text-slate-600 mb-4">
+                            継続的なチャンネル運営・戦略立案・コンテンツ企画を<span class="font-bold text-secondary">月額1万円</span>という破格の価格で提供。<br>
+                            5名の編集チームによる安定した運営体制をお約束します。
+                        </p>
+                    </div>
+                    <div class="glass-panel p-6 md:p-8 rounded-2xl shadow-sm border-l-4 border-secondary">
+                        <h3 class="text-xl font-bold text-primary mb-4">動画制作費</h3>
+                        <p class="text-slate-600 mb-4">
+                            動画編集・映像制作・撮影については、1本あたりの料金を別途いただきます。<br>
+                            品質と価格のバランスを重視したプランをご用意しています。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center mb-10">
+                    <h3 class="text-xl md:text-2xl font-bold text-primary mb-2">予算に合わせた<wbr>「月額プラン」例</h3>
+                    <p class="text-slate-500 text-sm">※動画制作費込みのシミュレーション</p>
+                </div>
+
+                <!-- Plans Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- Plan A -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden reveal hover:shadow-xl transition-shadow border border-slate-300/60">
+                        <div class="bg-slate-100 p-6 text-center">
+                            <h4 class="text-lg font-bold text-primary">プラン A</h4>
+                            <p class="text-3xl font-bold text-secondary mt-2">¥50,000</p>
+                            <span class="text-xs text-slate-500">運営費込み・最低料金例</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <ul class="text-sm text-slate-600 space-y-3">
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 通常の横動画 1本</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 横動画への誘導用ショート動画 3~6本</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> チャンネル運営費</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Plan B -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden reveal delay-100 transform md:-translate-y-4 border-2 border-secondary relative">
+                        <div class="absolute top-0 right-0 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">おすすめ</div>
+                        <div class="bg-primary p-6 text-center text-white">
+                            <h4 class="text-lg font-bold">プラン B</h4>
+                            <p class="text-3xl font-bold text-secondary mt-2">¥90,000</p>
+                            <span class="text-xs text-slate-300">バランス重視</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <ul class="text-sm text-slate-600 space-y-3">
+                                <li class="flex items-start"><i class="fas fa-check text-secondary mt-1 mr-2"></i> 通常の横動画 2本</li>
+                                <li class="flex items-start"><i class="fas fa-check text-secondary mt-1 mr-2"></i> 横動画への誘導用ショート動画 6~10本</li>
+                                <li class="flex items-start"><i class="fas fa-check text-secondary mt-1 mr-2"></i> チャンネル運営費</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Plan C -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden reveal delay-200 hover:shadow-xl transition-shadow border border-slate-300/60">
+                        <div class="bg-slate-100 p-6 text-center">
+                            <h4 class="text-lg font-bold text-primary">プラン C</h4>
+                            <p class="text-3xl font-bold text-secondary mt-2">¥150,000</p>
+                            <span class="text-xs text-slate-500">本格運用</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <ul class="text-sm text-slate-600 space-y-3">
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 通常の横動画 4本</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> 横動画への誘導用ショート動画 10~14本</li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> チャンネル運営費</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center reveal">
+                    <a href="#contact" class="inline-flex justify-center items-center px-10 py-4 border border-transparent text-lg font-bold rounded-full shadow-lg text-white bg-secondary hover:bg-pink-700 transition-all transform hover:-translate-y-1">
+                        お問い合わせはこちら <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="py-10 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8 md:mb-16 reveal">
+                    <h2 class="text-3xl font-bold text-primary section-title">Works</h2>
+                    <p class="mt-2 md:mt-4 text-slate-600">YouTubeチャンネルディレクション実績</p>
+                </div>
+
+                <div class="space-y-8 md:space-y-12">
+                    <!-- Work 1 -->
+                    <div class="group reveal flex flex-col lg:flex-row items-center gap-8 bg-slate-50 rounded-2xl p-4 md:p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-full lg:w-7/12">
+                    <div class="h-full flex flex-col justify-center">
+                        <h3 class="font-bold text-xl text-primary mb-3 border-l-4 border-secondary pl-3">
+                        地域密着型工務店
+                        </h3>
+                
+                        <!-- スマホ用：見出しの直下に動画を表示（PCでは非表示） -->
+                        <div class="block lg:hidden mb-4">
+                        <div class="video-container rounded-xl shadow-md transition-all duration-300">
+                            <iframe
+                            src="https://www.youtube.com/embed/qWZFood3n-E?si=JtHbRQCVoylE4Wv2"
+                            title="Work 1"
+                            frameborder="0"
+                            allowfullscreen
+                            ></iframe>
+                        </div>
+                        </div>
+                
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                        地域密着型工務店（ライクスホーム様）のYouTubeチャンネル運用を担当。「家」というハード面の紹介だけでなく、そこに住まう「人」や「物語」にフォーカスしたドキュメンタリースタイルのコンテンツを企画。
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-pink-50 text-secondary border border-pink-100">
+                            <i class="fas fa-users mr-2"></i> 1万人登録
+                        </span>
+                        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-white text-primary border border-slate-200 shadow-sm">
+                            <i class="fas fa-play mr-2"></i> 1600万再生
+                        </span>
+                        </div>
+                    </div>
+                    </div>
+                
+                    <!-- PC用：右側に動画を表示（スマホでは非表示） -->
+                    <div class="w-full lg:w-5/12 hidden lg:block">
+                    <div class="video-container rounded-xl shadow-md group-hover:shadow-xl transition-all duration-300">
+                        <iframe
+                        src="https://www.youtube.com/embed/qWZFood3n-E?si=JtHbRQCVoylE4Wv2"
+                        title="Work 1"
+                        frameborder="0"
+                        allowfullscreen
+                        ></iframe>
+                    </div>
+                    </div>
+                </div>
+                
+                <!-- Work 2 -->
+                <div class="group reveal delay-100 flex flex-col lg:flex-row items-center gap-8 bg-slate-50 rounded-2xl p-4 md:p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                    <!-- テキスト側（スマホではここに動画も表示） -->
+                    <div class="w-full lg:w-7/12">
+                    <div class="h-full flex flex-col justify-center">
+                        <h3 class="font-bold text-xl text-primary mb-3 border-l-4 border-secondary pl-3">
+                        不動産・建築知識チャンネル
+                        </h3>
+                
+                        <!-- スマホ用：見出し直下の動画（PCでは非表示） -->
+                        <div class="block lg:hidden mb-4">
+                        <div class="video-container rounded-xl shadow-md transition-all duration-300">
+                            <iframe
+                            src="https://www.youtube.com/embed/tkWBSGdQIuw?si=jZjCukRSa9ekTAxL"
+                            title="Work 2"
+                            frameborder="0"
+                            allowfullscreen
+                            ></iframe>
+                        </div>
+                        </div>
+                
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                        専門用語が多く敬遠されがちな不動産・建築知識を、エンターテインメントとして再構築。「勉強している感覚」がないまま、土地選びや建築の重要ポイントが自然と身につくチャンネル設計を行っています。
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-pink-50 text-secondary border border-pink-100">
+                            <i class="fas fa-users mr-2"></i> 2000人登録
+                        </span>
+                        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-white text-primary border border-slate-200 shadow-sm">
+                            <i class="fas fa-play mr-2"></i> 650万再生
+                        </span>
+                        </div>
+                    </div>
+                    </div>
+                
+                    <!-- PC用：右側に動画を表示（スマホでは非表示） -->
+                    <div class="w-full lg:w-5/12 hidden lg:block">
+                    <div class="video-container rounded-xl shadow-md group-hover:shadow-xl transition-all duration-300">
+                        <iframe
+                        src="https://www.youtube.com/embed/tkWBSGdQIuw?si=jZjCukRSa9ekTAxL"
+                        title="Work 2"
+                        frameborder="0"
+                        allowfullscreen
+                        ></iframe>
+                    </div>
+                    </div>
+                </div>
+                
+                <!-- Work 3 -->
+                <div class="group reveal delay-200 flex flex-col lg:flex-row items-center gap-8 bg-slate-50 rounded-2xl p-4 md:p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                    <!-- テキスト（スマホでは動画を下に表示） -->
+                    <div class="w-full lg:w-7/12">
+                    <div class="h-full flex flex-col justify-center">
+                        <!-- 過去実績タグ -->
+                        <span class="past-tag mb-2">過去実績</span>
+                
+                        <h3 class="font-bold text-xl text-primary mb-3 border-l-4 border-secondary pl-3">
+                        教育エンタメチャンネル
+                        </h3>
+                
+                        <!-- スマホ用動画表示 -->
+                        <div class="block lg:hidden mb-4">
+                        <div class="video-container rounded-xl shadow-md transition-all duration-300">
+                            <iframe
+                            src="https://www.youtube.com/embed/SB4G_8B4cxM?si=yXEiANz7R3y5nfyO"
+                            title="Work 3"
+                            frameborder="0"
+                            allowfullscreen
+                            ></iframe>
+                        </div>
+                        </div>
+                
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                        国内トップクラスの登録者数を誇る教育エンタメチャンネルの制作に従事。「英語×コメディ」というジャンルにおいて、数百万回再生を生み出すハイレベルなコンテンツ制作現場を経験。YouTubeエンターテインメントの最高峰基準での制作ノウハウを習得・実践しました。
+                        </p>
+                
+                        <div class="flex flex-wrap gap-3">
+                        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-pink-50 text-secondary border border-pink-100">
+                            <i class="fas fa-users mr-2"></i> 249万人登録
+                        </span>
+                        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-white text-primary border border-slate-200 shadow-sm">
+                            <i class="fas fa-play mr-2"></i> 22億回再生
+                        </span>
+                        </div>
+                    </div>
+                    </div>
+                
+                    <!-- PC用動画（スマホ非表示） -->
+                    <div class="w-full lg:w-5/12 hidden lg:block">
+                    <div class="video-container rounded-xl shadow-md group-hover:shadow-xl transition-all duration-300">
+                        <iframe
+                        src="https://www.youtube.com/embed/SB4G_8B4cxM?si=yXEiANz7R3y5nfyO"
+                        title="Work 3"
+                        frameborder="0"
+                        allowfullscreen
+                        ></iframe>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="py-10 md:py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8 md:mb-16 reveal">
+                    <h2 class="text-3xl font-bold text-primary section-title">Experience</h2>
+                    <p class="mt-2 md:mt-4 text-slate-600">業務経験・実績</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main Career (NHK) - Takes up 2 columns on large screens -->
+                    <div class="lg:col-span-2 reveal">
+                      <div class="bg-white p-4 md:p-8 rounded-2xl shadow-lg border-t-4 border-secondary h-full relative overflow-hidden">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4 mb-8 border-b border-slate-100 pb-6">
+                          <div class="bg-pink-50 text-secondary p-5 rounded-2xl md:mr-6 w-20 h-20 flex items-center justify-center shrink-0">
+                            <i class="fas fa-building text-3xl"></i>
+                          </div>
+                          <div>
+                            <h3 class="text-2xl font-bold text-primary mb-2">NHKエンタープライズ</h3>
+                            <div class="flex flex-wrap items-center gap-2 text-sm">
+                              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
+                                映像制作スタッフ (業務委託)
+                              </span>
+                              <span class="inline-flex items-center gap-1 text-slate-500">
+                                <i class="far fa-clock"></i>
+                                <span>2023 - 現在</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <p class="text-slate-600 mb-8 leading-relaxed">
+                          放送業界での実践的な映像制作経験を積み、プロフェッショナルなワークフローを学習
+                        </p>
+                  
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div class="bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-primary mb-2 flex items-center">
+                              <i class="fas fa-cut mr-2 text-secondary"></i> 動画編集
+                            </h4>
+                            <p class="text-sm text-slate-600">
+                              番組素材の編集・加工作業
+                            </p>
+                          </div>
+                          <div class="bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-primary mb-2 flex items-center">
+                              <i class="fas fa-wifi mr-2 text-secondary"></i> オンライン配信ディレクション
+                            </h4>
+                            <p class="text-sm text-slate-600">
+                              ライブ配信の技術的サポート・運営
+                            </p>
+                          </div>
+                          <div class="bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-primary mb-2 flex items-center">
+                              <i class="fas fa-camera mr-2 text-secondary"></i> カメラ撮影
+                            </h4>
+                            <p class="text-sm text-slate-600">
+                              イベント・番組撮影業務
+                            </p>
+                          </div>
+                          <div class="bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-primary mb-2 flex items-center">
+                              <i class="fas fa-sliders-h mr-2 text-secondary"></i> スイッチング業務
+                            </h4>
+                            <p class="text-sm text-slate-600">
+                              放送機材の操作・映像切り替え
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <!-- Sub Careers (Other Works) - Takes up 1 column -->
+                    <div
+                      class="lg:col-span-1 space-y-6 lg:space-y-0 lg:flex lg:flex-col lg:h-full lg:gap-6 reveal delay-100">
+                  
+                      <!-- MV -->
+                      <div
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all
+                               h-auto lg:flex-1 flex flex-col">
+                        <div class="flex items-start gap-3 mb-4">
+                          <div class="bg-pink-50 text-secondary w-12 h-12 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-photo-video text-xl"></i>
+                          </div>
+                          <div class="flex flex-col">
+                            <h3 class="font-bold text-lg text-primary mb-1">MV撮影・編集</h3>
+                            <span class="inline-flex items-center gap-1 text-xs text-slate-400">
+                              <i class="far fa-clock"></i>
+                              <span>2022 - 2023</span>
+                            </span>
+                          </div>
+                        </div>
+                  
+                        <p class="text-sm text-slate-600 mb-3">
+                          アーティストのミュージックビデオ制作プロジェクトに参加
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto text-xs">
+                          <span class="border border-slate-200 px-2 py-1 rounded text-slate-500">
+                            クリエイティブディレクション
+                          </span>
+                          <span class="border border-slate-200 px-2 py-1 rounded text-slate-500">
+                            映像編集
+                          </span>
+                          <span class="border border-slate-200 px-2 py-1 rounded text-slate-500">
+                            カラーグレーディング
+                          </span>
+                        </div>
+                      </div>
+                  
+                      <!-- Event -->
+                      <div
+                        class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all
+                               h-auto lg:flex-1 flex flex-col">
+                        <div class="flex items-start gap-3 mb-4">
+                          <div class="bg-pink-50 text-secondary w-12 h-12 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-video text-xl"></i>
+                          </div>
+                          <div class="flex flex-col">
+                            <h3 class="font-bold text-lg text-primary mb-1">イベント映像制作</h3>
+                            <span class="inline-flex items-center gap-1 text-xs text-slate-400">
+                              <i class="far fa-clock"></i>
+                              <span>2021 - 現在</span>
+                            </span>
+                          </div>
+                        </div>
+                  
+                        <p class="text-sm text-slate-600 mb-3">
+                          企業のイベント・セミナーの記録・配信用映像制作
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto text-xs">
+                          <span class="border border-slate-200 px-2 py-1 rounded text-slate-500">
+                            マルチカメラ編集
+                          </span>
+                          <span class="border border-slate-200 px-2 py-1 rounded text-slate-500">
+                            ライブ配信
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 relative bg-primary text-white overflow-hidden">
+            <!-- Decorative blobs -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-secondary opacity-10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-500 opacity-10 rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl font-bold mb-4">Contact</h2>
+                    <p class="text-slate-300">プロジェクトのご相談・お見積りは無料です</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <!-- Service List -->
+                    <div class="space-y-8 reveal">
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">YouTubeチャンネル総合ディレクション</h3>
+                            <p class="text-sm text-slate-300 mb-2">チャンネル成長のための戦略的なディレクションと運営管理</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">チャンネル運営</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">コンテンツ企画</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">戦略立案・分析</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">撮影</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">編集</span>
+
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">動画編集</h3>
+                            <p class="text-sm text-slate-300 mb-2">プロフェッショナルな技術で視聴者を魅了する動画を制作</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">カット</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">カラーグレーディング</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">アニメーション</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">音声編集</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">映像制作</h3>
+                            <p class="text-sm text-slate-300 mb-2">企画から完成まで、高品質な映像コンテンツを総合的に制作</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">撮影</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">カット</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">カラーグレーディング</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">音声編集</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">アニメーション
+                                </span>
+
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">ライブ配信</h3>
+                            <p class="text-sm text-slate-300 mb-2">プロフェッショナルなライブ配信環境の構築と運用サポート</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">カメラ・マイクセッティング</span>
+                                <span class="text-xs bg-white/10 px-2 py-1 rounded">スウィッチング</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ & Actions -->
+                    <div class="reveal delay-100">
+                        <h3 class="text-xl font-bold mb-6 border-b border-white/20 pb-2">よくある質問</h3>
+                        
+                        <div class="space-y-4 mb-10">
+                            <details class="group bg-white/5 rounded-lg overflow-hidden cursor-pointer transition-colors hover:bg-white/10">
+                                <summary class="flex justify-between items-center font-medium p-4 text-sm md:text-base">
+                                    <span>対応可能な地域はありますか？</span>
+                                    <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="text-slate-300 text-sm p-4 pt-0 leading-relaxed">
+                                    オンラインでの対応が中心ですが、全世界どこでも撮影・打ち合わせが可能です。
+                                </div>
+                            </details>
+                            
+                            <details class="group bg-white/5 rounded-lg overflow-hidden cursor-pointer transition-colors hover:bg-white/10">
+                                <summary class="flex justify-between items-center font-medium p-4 text-sm md:text-base">
+                                    <span>料金体系はどのようになっていますか？</span>
+                                    <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="text-slate-300 text-sm p-4 pt-0 leading-relaxed">
+                                    プロジェクトの規模・内容により異なります。まずは無料相談でご要望をお聞かせください。
+                                </div>
+                            </details>
+
+                            <details class="group bg-white/5 rounded-lg overflow-hidden cursor-pointer transition-colors hover:bg-white/10">
+                                <summary class="flex justify-between items-center font-medium p-4 text-sm md:text-base">
+                                    <span>納期はどの程度かかりますか？</span>
+                                    <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="text-slate-300 text-sm p-4 pt-0 leading-relaxed">
+                                    編集内容により異なりますが、通常1週間〜1ヶ月程度です。お急ぎの場合はご相談ください。
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="mailto:yuta.pw@yu-studio.jp" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-primary hover:bg-slate-100 transition-colors shadow-lg group">
+                                <i class="fas fa-envelope text-3xl mb-3 text-secondary group-hover:scale-110 transition-transform"></i>
+                                <span class="font-bold">メールを送る</span>
+                                <span class="text-xs text-slate-500 mt-1">詳細なご相談はこちら</span>
+                            </a>
+                            <a href="#" class="flex flex-col items-center justify-center p-6 bg-secondary rounded-xl text-white hover:bg-pink-700 transition-colors shadow-lg group">
+                                <i class="fab fa-google text-3xl mb-3 group-hover:scale-110 transition-transform"></i>
+                                <span class="font-bold">Googleフォーム</span>
+                                <span class="text-xs text-white/80 mt-1">簡単お問い合わせ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© <span id="currentYear"></span> Yuta Ogino. All Rights Reserved.</p>
+
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>
