@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>荻野 悠太 | ソーシャルメディアディレクション・映像制作</title>
     <meta name="description" content="ソーシャルメディアディレクション・映像制作を行う荻野悠太のポートフォリオサイトです">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
+
     <!-- Google Fonts: Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -37,62 +37,62 @@
         <!-- グラデーション定義用SVG（表示はされない） -->
         <svg width="0" height="0">
             <defs>
-              <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#ff8fbe" />
-                <stop offset="100%" stop-color="#ef5a98" />
-              </linearGradient>
-            </defs>
-          </svg>
-      
-          <div class="stage" id="logoStage">
-            
-            <!-- Icon Section -->
-            <div class="icon-container">
-              <svg class="tv-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <!-- TV Body (Fill layer) -->
-                <rect class="tv-fill" x="12" y="18" width="56" height="40" rx="8" ry="8" />
-                
-                <!-- TV Outline (Stroke layer) -->
-                <rect class="tv-stroke" x="12" y="18" width="56" height="40" rx="8" ry="8" />
-                <line class="tv-stroke" x1="32" y1="18" x2="24" y2="10" />
-                <line class="tv-stroke" x1="48" y1="18" x2="56" y2="10" />
-                
-                <!-- Play Button (Strokeで丸み付け) -->
-                <path class="play-icon" d="M36 30 L50 38 L36 46 Z" />
-              </svg>
-            </div>
-      
-            <!-- Text Section -->
-            <div class="text-wrapper">
-              <div class="flex">
-                <span class="char-mask"><span class="char char-y">Y</span></span>
-                <span class="char-mask"><span class="char char-u">U</span></span>
-              </div>
-              
-              <div class="flex flex-col justify-end">
-                <span class="char-mask">
-                  <span class="char word word-studio">STUDIO</span>
-                </span>
-              </div>
-            </div>
-      
-          </div>
+                <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ff8fbe" />
+                    <stop offset="100%" stop-color="#ef5a98" />
+                </linearGradient>
+                </defs>
+            </svg>
 
-          <!-- ローディングインジケーター（アニメーション終了後に表示） -->
-          <div id="loading-indicator" class="loading-indicator">
-            <div class="loading-content">
-              <!-- フィルムストリップ風プログレスバー -->
-              <div class="film-progress-container">
-                <div class="film-progress-bar">
-                  <div class="film-progress-fill" id="progress-fill"></div>
-                  <div class="film-perforations"></div>
+            <div class="stage" id="logoStage">
+
+                <!-- Icon Section -->
+                <div class="icon-container">
+                <svg class="tv-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <!-- TV Body (Fill layer) -->
+                    <rect class="tv-fill" x="12" y="18" width="56" height="40" rx="8" ry="8" />
+
+                    <!-- TV Outline (Stroke layer) -->
+                    <rect class="tv-stroke" x="12" y="18" width="56" height="40" rx="8" ry="8" />
+                    <line class="tv-stroke" x1="32" y1="18" x2="24" y2="10" />
+                    <line class="tv-stroke" x1="48" y1="18" x2="56" y2="10" />
+
+                    <!-- Play Button (Strokeで丸み付け) -->
+                    <path class="play-icon" d="M36 30 L50 38 L36 46 Z" />
+                </svg>
                 </div>
-              </div>
-              
-              <!-- ローディングテキスト -->
-              <div class="loading-text">Loading...</div>
+
+                <!-- Text Section -->
+                <div class="text-wrapper">
+                <div class="flex">
+                    <span class="char-mask"><span class="char char-y">Y</span></span>
+                    <span class="char-mask"><span class="char char-u">U</span></span>
+                </div>
+
+                <div class="flex flex-col justify-end">
+                    <span class="char-mask">
+                    <span class="char word word-studio">STUDIO</span>
+                    </span>
+                </div>
+                </div>
+
             </div>
-          </div>
+
+            <!-- ローディングインジケーター（アニメーション終了後に表示） -->
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="loading-content">
+                <!-- フィルムストリップ風プログレスバー -->
+                <div class="film-progress-container">
+                    <div class="film-progress-bar">
+                    <div class="film-progress-fill" id="progress-fill"></div>
+                    <div class="film-perforations"></div>
+                    </div>
+                </div>
+
+                <!-- ローディングテキスト -->
+                <div class="loading-text">Loading...</div>
+                </div>
+            </div>
     </div>
 
     <!-- Fixed Background Blobs (Visible across Hero & Profile) -->
@@ -114,21 +114,21 @@
                     </a> -->
                     <a href="#hero" class="logo-link">
                         <div class="icon-wrapper">
-                          <svg class="tv-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                            <line class="tv-antenna" x1="32" y1="18" x2="24" y2="10" />
-                            <line class="tv-antenna" x1="48" y1="18" x2="56" y2="10" />
-                            <rect class="tv-body" x="12" y="18" width="56" height="40" rx="8" ry="8" />
-                            <path class="play-icon" d="M36 30 L50 38 L36 46 Z" />
-                          </svg>
-                        </div>
-                        
-                        <div class="logo-text">
-                          <span class="text-yu">Y<span class="char-u">U</span></span>
-                          <span class="text-studio">STUDIO</span>
-                        </div>
-                      </a>
+                            <svg class="tv-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <line class="tv-antenna" x1="32" y1="18" x2="24" y2="10" />
+                                <line class="tv-antenna" x1="48" y1="18" x2="56" y2="10" />
+                                <rect class="tv-body" x="12" y="18" width="56" height="40" rx="8" ry="8" />
+                                <path class="play-icon" d="M36 30 L50 38 L36 46 Z" />
+                            </svg>
+                            </div>
+
+                            <div class="logo-text">
+                            <span class="text-yu">Y<span class="char-u">U</span></span>
+                            <span class="text-studio">STUDIO</span>
+                            </div>
+                        </a>
                 </div>
-                
+
                 <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#profile" class="text-slate-600 hover:text-secondary px-3 py-2 text-sm font-medium transition-colors">Profile</a>
@@ -166,93 +166,93 @@
         </div>
     </header>
 
+
+
     <main class="pt-16">
 
         <!-- Hero Section -->
         <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
-            
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 w-full relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="order-1 lg:order-1 reveal active">
-                    <div class="cinematic-text">
-                        <p class="text-secondary font-bold tracking-wider uppercase mb-2 md:mb-4 text-[clamp(0.75rem,4vw,1.1rem)]">
-                            編集・撮影・運営・コンサルまで幅広く対応
-                        </p>
-             
-                    <h1 class="text-4xl lg:text-6xl font-black text-primary font-semibold leading-tight mb-4 tracking-wide">
-                        荻野 悠太<br>
-                        <span class="text-2xl lg:text-3xl font-normal text-slate-500 tracking-normal">Ogino Yuta</span>
-                    </h1>
-                    <p class="text-base md:text-xl text-slate-600 mb-8 font-medium">
-                        <!-- 編集・撮影・運営・コンサルまで幅広く対応 -->
-                    </p>
-                    </div>
-            
-                    <!-- Stats -->
-                    <div class="flex flex-wrap gap-6 mb-8 border-l-4 border-secondary pl-6">
-                    <div class="flex flex-col items-center">
-                        <p class="text-sm text-slate-500">編集歴</p>
-                        <p class="text-xl md:text-2xl font-bold text-primary">5年</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <p class="text-sm text-slate-500">チーム管理</p>
-                        <p class="text-xl md:text-2xl font-bold text-primary">5名</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <p class="text-sm text-slate-500">現在管理数</p>
-                        <p class="text-xl md:text-2xl font-bold text-primary">4ch</p>
-                    </div>
-                    </div>
-            
-                    <!-- CTA -->
-                    <div class="flex flex-col sm:flex-row gap-4">
-                    <a
-                        href="#works"
-                        class="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-secondary hover:bg-pink-700 transition-all transform hover:-translate-y-1"
-                    >
-                        実績を見る <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a
-                        href="#contact"
-                        class="inline-flex justify-center items-center px-8 py-3 border-2 border-primary text-base font-medium rounded-full text-primary bg-transparent hover:bg-primary hover:text-white transition-all"
-                    >
-                        問い合わせ
-                    </a>
-                    </div>
-                </div>
-            
-                <!-- Latest Work (Embed) -->
-                <div class="order-2 lg:order-2 reveal delay-200 w-full max-w-lg mx-auto lg:max-w-full">
-                    <div class="latest-work-container">
-                    <!-- Premium Badge -->
-                    <div class="latest-work-badge">
-                        <i class="fas fa-star"></i>
-                        <span>Latest Work</span>
-                    </div>
-                    
-                    <!-- Video Wrapper with Glass Effect -->
-                    <div class="glass-card p-4 md:p-5 rounded-2xl">
-                        <div class="latest-work-video-wrapper">
-                        <div class="video-container">
-                            <iframe
-                            src="https://www.youtube.com/embed/qWZFood3n-E?si=JtHbRQCVoylE4Wv2"
-                            title="Latest YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                            ></iframe>
+                    <!-- Text Content -->
+                    <div class="order-1 lg:order-1 reveal active">
+                        <div class="cinematic-text">
+                            <p class="text-secondary font-bold tracking-wider uppercase mb-2 md:mb-4 text-[clamp(0.75rem,4vw,1.1rem)]">
+                                編集・撮影・運営・コンサルまで幅広く対応
+                            </p>
+
+                            <h1 class="text-4xl lg:text-6xl font-black text-primary font-semibold leading-tight mb-4 tracking-wide">
+                                荻野 悠太<br>
+                                <span class="text-2xl lg:text-3xl font-normal text-slate-500 tracking-normal">Ogino Yuta</span>
+                            </h1>
+
                         </div>
+
+                        <!-- Stats -->
+                        <div class="flex flex-wrap gap-6 mb-8 border-l-4 border-secondary pl-6">
+                            <div class="flex flex-col items-center">
+                                <p class="text-sm text-slate-500">編集歴</p>
+                                <p class="text-xl md:text-2xl font-bold text-primary"><span id="videoYears"></span>年</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <p class="text-sm text-slate-500">チーム管理</p>
+                                <p class="text-xl md:text-2xl font-bold text-primary">5名</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <p class="text-sm text-slate-500">現在管理数</p>
+                                <p class="text-xl md:text-2xl font-bold text-primary">4ch</p>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                        <a
+                            href="#works"
+                            class="inline-flex justify-center items-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-secondary hover:bg-pink-700 transition-all transform hover:-translate-y-1"
+                        >
+                            実績を見る <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a
+                            href="#contact"
+                            class="inline-flex justify-center items-center px-8 py-3 border-2 border-primary text-base font-medium rounded-full text-primary bg-transparent hover:bg-primary hover:text-white transition-all"
+                        >
+                            問い合わせ
+                        </a>
                         </div>
                     </div>
-                    
-                    <!-- Decorative Element -->
-                    <div class="latest-work-decoration"></div>
+
+                    <!-- Latest Work (Embed) -->
+                    <div class="order-2 lg:order-2 reveal delay-200 w-full max-w-lg mx-auto lg:max-w-full">
+                        <div class="latest-work-container">
+                        <!-- Premium Badge -->
+                        <div class="latest-work-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Latest Work</span>
+                        </div>
+
+                        <!-- Video Wrapper with Glass Effect -->
+                        <div class="glass-card p-4 md:p-5 rounded-2xl">
+                            <div class="latest-work-video-wrapper">
+                                <div class="video-container">
+                                    <iframe
+                                    src="https://www.youtube.com/embed/qWZFood3n-E?si=JtHbRQCVoylE4Wv2"
+                                    title="Latest YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Element -->
+                        <div class="latest-work-decoration"></div>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
-            
+
         </section>
 
         <!-- Profile Section -->
@@ -292,11 +292,11 @@
                                     <i class="fas fa-graduation-cap mr-2 text-primary"></i> 専攻：異文化コミュニケーション
                                 </span>
                             </div>
-                            
+
                         </div>
                     </div>
 
-                    <!-- Skills (Premium Glassmorphism Applied) -->
+                    <!-- Skills -->
                     <div class="lg:col-span-5 reveal delay-100">
                         <div class="glass-card p-6 md:p-8 rounded-2xl h-full">
                             <h4 class="text-lg font-bold text-primary mb-6 border-b border-slate-200/50 pb-2">スキル・ツール</h4>
@@ -354,18 +354,18 @@
 
                 <!-- Triangle Diagram Section -->
                 <div class="max-w-[500px] mx-auto mb-10 md:mb-24 relative reveal delay-100" style="aspect-ratio: 200/180;">
-                    
+
                     <!-- Triangle SVG Background -->
-                    <!-- 
-                         Equilateral Triangle Coordinates (ViewBox 0 0 200 180):
-                         Top Vertex: (100, 20)
-                         Bottom Right Vertex: (165, 132.5)
-                         Bottom Left Vertex: (35, 132.5)
+                    <!--
+                        Equilateral Triangle Coordinates (ViewBox 0 0 200 180):
+                        Top Vertex: (100, 20)
+                        Bottom Right Vertex: (165, 132.5)
+                        Bottom Left Vertex: (35, 132.5)
                     -->
                     <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 200 180">
                         <path class="triangle-path" d="M100 20 L165 132.5 L35 132.5 Z" fill="none" stroke="#db2777" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    
+
                     <!-- Center Label: Positioned Lower (50% from top) for better balance with animation -->
                     <div class="center-label z-0" style="top: 50%;">
                         <div class="bg-white/95 backdrop-blur border border-pink-100 shadow-xl px-6 md:px-8 py-2 md:py-4 rounded-xl text-center">
@@ -409,7 +409,7 @@
                 </div>
 
                 <div class="relative reveal delay-200">
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
                         <!-- Card 1 -->
                         <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary hover:transform hover:-translate-y-2 transition-all duration-300">
@@ -429,7 +429,6 @@
                                 を構築できます。
                             </p>
                         </div>
-                        
 
                         <!-- Card 2 -->
                         <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary hover:transform hover:-translate-y-2 transition-all duration-300">
@@ -480,7 +479,7 @@
                 </div>
 
                 <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
-                    
+
                     <!-- Step 1 -->
                     <div class="relative flex items-center reveal">
                         <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-secondary bg-white text-secondary shadow shrink-0 z-10 font-bold">1</div>
